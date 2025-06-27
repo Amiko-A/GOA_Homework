@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta>
+  <title>Document</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      background-color: black;
+    }
+    input {
+      margin: 10px auto;
+      padding: 10px;
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="register">
+    <input type="text" id="firstName" placeholder="Name">
+    <input type="text" id="lastName" placeholder="LastName">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <input type="password" id="confirmPassword" placeholder="confirmPassword">
+    <button type="submit">Register</button>
+  </div>
+
+  <h1 id="message"></h1>
+
+  <script>
+    let form = document.getElementById('register');
+    let messageDiv = document.getElementById('message');
+
+      let firstName = document.getElementById('firstName');
+      let lastName = document.getElementById('lastName');
+      let email = document.getElementById('email');
+      let password = document.getElementById('password');
+      let confirmPassword = document.getElementById('confirmPassword');
+
+      if (!firstName || !lastName || !email || !password || !confirmPassword){
+        alert("Please fill in every field!");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        document.body.style.backgroundColor = "red";
+        messageDiv.style.color = "white";
+        messageDiv.textContent = "Passwords do not match!";
+        return;
+      }
+
+      document.body.style.backgroundColor = "lime";
+      message.style.color = "black";
+      message.textContent = "successfullylogin";
+  </script>
+
+</body>
+</html>

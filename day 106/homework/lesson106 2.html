@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta>
+  <title>Document</title>
+</head>
+<body>
+  <div id="outer">
+    Outer
+    <div id="inner">
+      Inner
+      <button id="button">Click Me</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("outer").addEventListener("click", function() {
+      console.log("outer clicked");
+    });
+
+    document.getElementById("inner").addEventListener("click", function() {
+      console.log("inner clicked");
+    });
+
+    document.getElementById("button").addEventListener("click", function() {
+      console.log("button clicked");
+    });
+  </script>
+</body>
+</html>
