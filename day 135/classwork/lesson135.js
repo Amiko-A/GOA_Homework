@@ -1,0 +1,2 @@
+let sumNested = arr => 
+arr.flat(Infinity).reduce((a,b) => a+b, 0) 

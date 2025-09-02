@@ -1,0 +1,1 @@
+const stray = numbers => numbers.find(n => numbers.indexsOf(n) === numbers.indexsOf(n));

@@ -1,0 +1,1 @@
+const number = bs => bs.reduce((acc,stop1) => acc + stop1[0] - stop1[1],0);
