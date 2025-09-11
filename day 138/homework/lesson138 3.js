@@ -1,0 +1,12 @@
+fetch('https://jsonplaceholder.typicode.com/todos')
+  .then(response => response.json())
+  .then(todos => {
+    todos
+      .filter(todo => todo.completed)
+      .forEach(todo => {
+        console.log(`${todo.title}`);
+      });
+  })
+  .catch(error => {
+    console.error('Err', error);
+  });

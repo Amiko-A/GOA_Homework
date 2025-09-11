@@ -1,20 +1,10 @@
-const jsonData = `[
-  {"name": "Alpha", "rank": 4, "active": true},
-  {"name": "Bravo", "rank": 2, "active": false},
-  {"name": "Charlie", "rank": 1, "active": true},
-  {"name": "Delta", "rank": 3, "active": true},
-  {"name": "Echo", "rank": 5, "active": false}
+const jsonperson = `[
+  {"name": "Amiko", "email": "amiko@gmail.com", "verified": true},
+  {"name": "Bondo", "email": "bondo@gmail.com", "verified": false},
+  {"name": "dato", "email": "dato@gmail.com", "verified": true}
 ]`;
-
-function parseAndTransformData(jsonString) {
-  const operatives = JSON.parse(jsonString);
-  const activeOperatives = operatives.filter(operative => operative.active);
-  activeOperatives.sort((a, b) => b.rank - a.rank);
-  const transformedOperatives = activeOperatives.map(operative => 
-    `Operative ${operative.name} (Rank ${operative.rank}) - ACTIVE`
-  );
-  return transformedOperatives;
-}
-
-const result = parseAndTransformData(jsonData);
+const result = JSON.parse(jsonperson)
+  .filter(op => op.active)
+  .sort((a, b) => b.rank - a.rank)
+  .map(op => `Operative ${op.name} (Rank ${op.rank}) - ACTIVE`);
 console.log(result);
